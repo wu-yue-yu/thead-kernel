@@ -6,7 +6,7 @@
 #include "light-lpi4a-ref.dts"
 
 / {
-	model = "T-HEAD Light Lichee Pi 4A configuration for 16GB DDR board";
+	model = "Sipeed Lichee Pi 4A configuration for 16GB DDR board";
 	compatible = "thead,light-val", "thead,light-lpi4a", "thead,light";
 
 	memory@0 {
