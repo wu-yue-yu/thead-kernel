@@ -8,6 +8,7 @@
 #include <dt-bindings/pinctrl/light-fm-aon-pinctrl.h>
 #include <dt-bindings/pinctrl/light-fm-audio-pinctrl.h>
 #include <dt-bindings/pinctrl/light-fm-pinctrl-def.h>
+#include <dt-bindings/pinctrl/light.h>
 #include <dt-bindings/clock/light-fm-ap-clock.h>
 #include <dt-bindings/clock/light-vpsys.h>
 #include <dt-bindings/clock/light-vosys.h>
@@ -379,7 +380,7 @@
 		};
 	};
 
-	soc {
+	soc: soc {
 		compatible = "simple-bus";
 		#address-cells = <2>;
 		#size-cells = <2>;

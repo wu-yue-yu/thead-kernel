@@ -1,4 +1,9 @@
 # SPDX-License-Identifier: GPL-2.0
+
+ifeq ($(CONFIG_OF_OVERLAY),y)
+DTC_FLAGS += -@
+endif
+
 dtb-$(CONFIG_SOC_THEAD) += ice.dtb
 dtb-$(CONFIG_SOC_THEAD) += light-fm-emu.dtb light_mpw.dtb
 dtb-$(CONFIG_SOC_THEAD) += light-fm-emu-npu-fce.dtb
@@ -29,7 +34,7 @@ dtb-$(CONFIG_SOC_THEAD) += light-a-val-full.dtb
 dtb-$(CONFIG_SOC_THEAD) += light-ant-ref.dtb
 dtb-$(CONFIG_SOC_THEAD) += light-ant-discrete.dtb
 dtb-$(CONFIG_SOC_THEAD) += light-beagle.dtb
-dtb-$(CONFIG_SOC_THEAD) += light-lpi4a.dtb light-lpi4a-ddr2G.dtb light-lpi4a-16gb.dtb
+dtb-$(CONFIG_SOC_THEAD) += light-lpi4a.dtb light-lpi4a-ddr2G.dtb light-lpi4a-16gb.dtb light-lpi4a-dsi0-hdmi.dtb
 dtb-$(CONFIG_SOC_THEAD) += light-lpi4a-cluster.dtb light-lpi4a-cluster-16gb.dtb
 dtb-$(CONFIG_SOC_THEAD) += light-a-ref.dtb light-a-ref-dsi0.dtb light-a-ref-dsi0-hdmi.dtb
 dtb-$(CONFIG_SOC_THEAD) += light-b-ref.dtb
@@ -42,3 +47,8 @@ dtb-$(CONFIG_SOC_THEAD) += fire-emu.dtb fire-emu-crash.dtb
 dtb-$(CONFIG_SOC_THEAD) += fire-emu-soc-base.dtb fire-emu-soc-c910x4.dtb fire-emu-gpu-dpu-dsi0.dtb fire-emu-vi-dsp-vo.dtb fire-emu-vi-vp-vo.dtb
 dtb-$(CONFIG_SOC_THEAD) += fire-emu-soc-base-sec.dtb
 dtb-$(CONFIG_SOC_THEAD) += light-lpi4a-laptop.dtb
+
+targets += dtbs dtbs_install
+targets += $(dtb-y)
+
+subdir-y	:= overlays
